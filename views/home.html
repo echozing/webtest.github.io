@@ -1,1 +1,87 @@
-home.html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RMSOnline - Home</title>
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script src="js/scripts.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="font/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body class="home_rmsonline">
+	<nav class="navbar navbar-expand-lg navbar-default nav_rms">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img alt="Isotipo" src="images/isotipo_empresa.png" class="logo_client">
+					<span class="lblNameClient">Empresa ABC</span>
+				</a>
+			</div>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end">
+				<div class="d-flex ">
+					<div class="btn-group">
+						<button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<span class="lblIconNameUser icon_user"></span>
+						<span class="lblNameUser">Pepito Fernandez</span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="content">
+		<div class="sidebar">
+			<ul class="menu_items">
+				<li class="menu_item active">
+					<a href="home.html" class="menu_link"><i class="fas fa-home"></i><span>Inicio</span></a>
+				</li>
+				<li class="menu_item parent">
+					<a href="products.html" class="menu_link"><i class="fas fa-tag"></i><span>Productos</span></a>
+					<ul class="submenu_items">
+						<li class="submenu_item">
+							<a href="" class="submenu_link"><span>Todos los productos</span></a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu_item parent">
+					<a href="sales.html" class="menu_link"><i class="fas fa-user"></i><span>Ventas</span></a>
+					<ul class="submenu_items">
+						<li class="submenu_item">
+							<a href="sales.html" class="submenu_link"><span>Ventas</span></a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="content_rms">
+			<div class="container">
+				<div class="row justify-content-md-center">
+					<div class="col-8">
+						<div class="card">
+							<div class="card-body">
+								<a href="#" class="item_home_rms">
+									<strong>1000 pedidos por atender</strong>
+									<i class="fas fa-chevron-right"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+
+</body>
+</html>

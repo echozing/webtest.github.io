@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RMSOnline - Products</title>
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script src="js/scripts.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="font/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body class="home_rmsonline">
+	<nav class="navbar navbar-expand-lg navbar-default nav_rms">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img alt="Isotipo" src="images/isotipo_empresa.png" class="logo_client">
+					<span class="lblNameClient">Empresa ABC</span>
+				</a>
+			</div>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end">
+				<div class="d-flex ">
+					<div class="btn-group">
+						<button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="lblIconNameUser icon_user"></span>
+							<span class="lblNameUser">Pepito Fernandez</span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="content">
+
+		<div class="sidebar">
+			<ul class="menu_items">
+				<li class="menu_item active">
+					<a href="home.html" class="menu_link"><i class="fas fa-home"></i><span>Inicio</span></a>
+				</li>
+				<li class="menu_item parent active">
+					<a href="products.html" class="menu_link"><i class="fas fa-tag"></i><span>Productos</span></a>
+					<ul class="submenu_items">
+						<li class="submenu_item active">
+							<a href="" class="submenu_link"><span>Todos los productos</span></a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu_item parent">
+					<a href="sales.html" class="menu_link"><i class="fas fa-user"></i><span>Ventas</span></a>
+					<ul class="submenu_items">
+						<li class="submenu_item">
+							<a href="" class="submenu_link"><span>Ventas</span></a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="content_rms">
+			<div class="container">
+				<div class="row justify-content-between title_content_rms">
+					<div class="col-4">
+						<h4 class="title">Productos</h4>
+					</div>
+					<div class="col-2">
+						<button class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#importProducts">Importar</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+
+						<div class="products_container">
+
+							<ul class="nav nav-tabs" id="productsTabs" role="tablist">
+								<li class="nav-item" role="presentation">
+									<button class="nav-link active" id="products-tab" data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="true">Productos</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="actives-tab" data-bs-toggle="tab" data-bs-target="#actives" type="button" role="tab" aria-controls="actives" aria-selected="false">Activo</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="discontinued-tab" data-bs-toggle="tab" data-bs-target="#discontinued" type="button" role="tab" aria-controls="discontinued" aria-selected="false">Descontinuados</button>
+								</li>
+								<li class="nav-item" role="presentation">
+									<button class="nav-link" id="eraser-tab" data-bs-toggle="tab" data-bs-target="#eraser" type="button" role="tab" aria-controls="eraser" aria-selected="false">Borrador</button>
+								</li>
+							</ul>
+							<div class="tab-content" id="productsTabsContent">
+								<div class="tab-pane fade show active" id="products" role="tabpanel" aria-labelledby="products-tab">
+									<div class="actions">
+										<div class="input-group mb-3">
+											<span class="input-group-text" id="inputGroup-search"><i class="fas fa-search"></i></span>
+											<input type="text" class="form-control" aria-label="" aria-describedby="inputGroup-search" placeholder="Filtrar productos">
+											<button class="btn btn-outline-primary">Más filtros</button>
+											<button class="btn btn-outline-primary">Ordenar</button>
+										</div>
+										
+									</div>
+									<table class="table table-hover table_rms" data-toggle="table">
+										<thead>
+											<tr>
+												<th scope="col"><input type="checkbox" name="checkAll" id="checkAll"></th>
+												<th scope="col"><span class="img_product_divider"></span></th>
+												<th scope="col">Estilo</th>
+												<th scope="col">Descripción</th>
+												<th scope="col">Proveedor</th>
+												<th scope="col">Departamento</th>
+												<th scope="col">Stock</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td scope="row"><input type="checkbox" name="checkItem" class="checkItem"></td>
+												<td><img src="images/notFound.jpg" class="thumbProduct" width="60" height="60"></td>
+												<td>LAC00000123</td>
+												<td>POLO MANGA CORTA, TEJIDO A MANO</td>
+												<td>LACOSTE</td>
+												<td>ROPA</td>
+												<td>100</td>
+											</tr>
+										</tbody>
+									</table>
+
+
+								</div>
+								<div class="tab-pane fade" id="actives" role="tabpanel" aria-labelledby="actives-tab">Activos</div>
+								<div class="tab-pane fade" id="discontinued" role="tabpanel" aria-labelledby="discontinued-tab">Descontinuados</div>
+								<div class="tab-pane fade" id="eraser" role="tabpanel" aria-labelledby="eraser-tab">Borrador</div>
+
+								<!-- paginacion -->
+								<div class="row">
+									<div class="col align-self-center">
+										<nav aria-label="Page navigation">
+											<ul class="pagination d-flex justify-content-center">
+												<li class="page-item"><a class="page-link" href="#" class="disabled"><i class="fas fa-chevron-left"></i></a></li>
+												<li class="page-item"><a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+
+								
+							</div>
+
+						</div>
+
+					</div>
+					
+				</div> <!-- end row -->
+
+				<!-- footer -->
+				<footer>
+					<hr>
+					<br>
+					<center>Copyright 2021 - Retail Custom Solutions</center>
+					<br>
+					<br>
+				</footer><!-- end footer -->
+			</div>	
+		</div>
+	</div>
+
+	<!-- modal importar -->
+	<div class="modal" tabindex="-1" id="importProducts" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title">Importar productos con archivos EXCEL</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>Descarga una <a href="#">plantilla de EXCEL de muestra</a> para ver un ejemplo de formato requerido.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-outline-primary">Verificar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

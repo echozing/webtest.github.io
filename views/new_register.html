@@ -1,1 +1,62 @@
-new_register.html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RMSOnline - New Register</title>
+	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+</head>
+<body class="login">
+	<div class="rms-container">
+		<div class="rms-main">
+			<div class="rms-login_card">
+				<div class="login_content">
+					<img src="images/logo_empresa.jpg" alt="logo retail" class="logo_index">
+					<div class="title">
+						<h1>Registro</h1>
+						<p>Complete los siguientes campos</p>
+						<form>
+						<div class="input_group">
+								<label>Company Code</label>
+								<input type="text" name="rms_NewCompanyCode" placeholder="" required>
+							</div>
+							<div class="input_group">
+								<label>Usuario</label>
+								<input type="text" name="rms_NewUsuario" placeholder="" required>
+							</div>
+							<div class="input_group">
+								<label>Correo electrónico</label>
+								<input type="email" name="rms_NewEmail" placeholder="" required>
+							</div>
+							<div class="input_group">
+								<label>Contraseña</label>
+								<input type="password" name="rms_NewPassword" placeholder="" required>
+							</div>
+							<div class="input_group">
+								<label>Confirmar contraseña</label>
+								<input type="password" name="rms_ConfirmPassword" placeholder="" required>
+							</div>
+							<div class="input_group">
+								<div class="g-recaptcha" data-sitekey="your_site_key"></div>
+							</div>		
+							<div class="btn_group">
+								<a href="#"><button class="btn btn-link">Regresar</button></a>
+								<button type="submit" class="btn btn-primary">Registrar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="login_footer">
+					
+				</div>
+			</div>
+		</div>
+		<div class="rms-bg"></div>
+	</div>
+</body>
+</html>
